@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" ambiguous="YES" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Start the Game" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
                                 <rect key="frame" x="32" y="48" width="350" height="595"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="595" id="nd9-8m-BRs"/>
@@ -67,6 +67,22 @@
                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cao-Di-KJ4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOP-UO-6Ej">
+                                <rect key="frame" x="32" y="769" width="350" height="64"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="AFg-ax-iBa"/>
+                                    <constraint firstAttribute="height" constant="64" id="U3X-pF-HzL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sb9-e4-pa5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -75,18 +91,24 @@
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="1rY-rb-4G8"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="tbn-vQ-GyC" secondAttribute="bottom" constant="28" id="7Sn-4l-7o1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oVw-Hl-IRe" secondAttribute="trailing" constant="32" id="I7b-q7-OuB"/>
+                            <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="bOP-UO-6Ej" secondAttribute="bottom" id="J5l-lM-GIJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TXm-qh-7Xg" secondAttribute="trailing" constant="32" id="Og0-p8-6lw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSI-li-mhO" secondAttribute="trailing" constant="32" id="PvT-CB-qNA"/>
+                            <constraint firstItem="rSI-li-mhO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vra-65-Vqr"/>
                             <constraint firstItem="oVw-Hl-IRe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="bDg-pg-dZp"/>
                             <constraint firstItem="tbn-vQ-GyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="eM8-wy-spr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbn-vQ-GyC" secondAttribute="trailing" constant="32" id="pAn-I7-uZd"/>
                             <constraint firstItem="rSI-li-mhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="t7D-42-Alm"/>
+                            <constraint firstItem="bOP-UO-6Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xZh-Tv-daQ"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="tbn-vQ-GyC" secondAttribute="bottom" constant="28" id="y38-ZZ-SG6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TXm-qh-7Xg" secondAttribute="bottom" constant="24" id="yZH-bf-jcG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bOP-UO-6Ej" secondAttribute="trailing" constant="32" id="z3d-mZ-MbI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="8bC-Xf-vdC" id="YJH-v3-Keh"/>
                         <outlet property="buttonFalse" destination="tbn-vQ-GyC" id="kAf-WV-COQ"/>
+                        <outlet property="buttonStart" destination="bOP-UO-6Ej" id="M3Z-aX-I5a"/>
                         <outlet property="buttonTrue" destination="oVw-Hl-IRe" id="ZaD-LM-IuW"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="bB1-k4-ucM"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="Yhc-bW-g6x"/>
