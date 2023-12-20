@@ -14,8 +14,8 @@
             filePath = "Quizzler-iOS13/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "configureButtonStyles()"
             landmarkType = "7">
          </BreakpointContent>
