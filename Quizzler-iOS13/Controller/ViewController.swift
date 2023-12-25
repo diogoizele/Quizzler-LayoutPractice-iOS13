@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var buttonTrue: Button!
-    @IBOutlet weak var buttonFalse: Button!
+    @IBOutlet weak var answer1: Button!
+    @IBOutlet weak var answer2: Button!
+    @IBOutlet weak var answer3: Button!
     @IBOutlet weak var buttonStart: Button!
     @IBOutlet weak var progressBar: ProgressBar!
     @IBOutlet var questionLabel: Label!
+    @IBOutlet var scoreLabel: Label!
     @IBOutlet var backgroundView: UIView!
     
     var quizBrain = QuizBrain()
@@ -52,37 +54,46 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        buttonTrue.isHidden = false
-        buttonFalse.isHidden = false
+
+        let index = updateQuestion()
+        quizBrain.questionIndex = index
+        setAnswers(index: index)
+        
+        answer1.isHidden = false
+        answer2.isHidden = false
+        answer3.isHidden = false
         progressBar.isHidden = false
+        scoreLabel.isHidden = false
         
         buttonStart.isHidden = true
         
         backgroundView.backgroundColor = UIColor.systemYellow
         questionLabel.textColor = UIColor.systemPurple
-        
-        quizBrain.questionIndex = updateQuestion()
     }
     
     @objc func auxUpdateQuestion() {
         quizBrain.questionIndex = updateQuestion()
         
         if progressBar.progress == 1.0 {
-            questionLabel.setText("Your score was \(quizBrain.score)/\(quizBrain.totalQuestionsLength)")
-            buttonTrue.isHidden = true
-            buttonFalse.setTitle("Continue", for: .normal)
+            questionLabel.setText("Sua pontuação foi de \(quizBrain.score)/\(quizBrain.totalQuestionsLength)")
+            answer1.isHidden = true
+            answer2.isHidden = true
+            answer3.setTitle("Continuar", for: .normal)
             setViewStyles()
-            buttonFalse.setReverse(true)
+            answer3.setReverse(true)
         }
     }
     
     private func updateQuestion() -> Int {
         var index = 0
         
+        scoreLabel.setText("Pontos: \(quizBrain.getCurrentScore())")
+        
         if (!quizBrain.questions.isEmpty) {
             
             index = quizBrain.generationQuestionIndex()
-            let text = quizBrain.questions[index].title
+            setAnswers(index: index)
+            let text = quizBrain.questions[index].question
             
             questionLabel.setText(text)
         }
@@ -92,27 +103,35 @@ class ViewController: UIViewController {
     
     
     private func initialStyles(_ restart: Bool?) {
+        if restart != nil && restart == true {
+            questionLabel.setText("Deseja fazer outra tentativa?")
+        }
         
         buttonStart.setReverse(true)
         buttonStart.isHidden = false
         
-        buttonTrue.isHidden = true
-        buttonFalse.isHidden = true
-        buttonFalse.setTitle("False", for: .normal)
-        buttonFalse.setReverse(false)
+        answer1.isHidden = true
+        answer2.isHidden = true
+        answer3.isHidden = true
+        answer3.setReverse(false)
+    
         progressBar.isHidden = true
         
-        setViewStyles()
+        scoreLabel.isHidden = true
+        scoreLabel.setText("Pontos: \(quizBrain.getCurrentScore())")
         
-        if restart != nil && restart == true {
-            questionLabel.setText("Restart the game")
-            buttonStart.setTitle("Restart", for: .normal)
-        }
+        setViewStyles()
     }
     
     private func setViewStyles() {
         backgroundView.backgroundColor = UIColor.systemPurple
         questionLabel.textColor = UIColor.systemYellow
+    }
+    
+    private func setAnswers(index: Int) {
+        answer1.setTitle(quizBrain.questions[index].answers[0], for: .normal)
+        answer2.setTitle(quizBrain.questions[index].answers[1], for: .normal)
+        answer3.setTitle(quizBrain.questions[index].answers[2], for: .normal)
     }
 
 }

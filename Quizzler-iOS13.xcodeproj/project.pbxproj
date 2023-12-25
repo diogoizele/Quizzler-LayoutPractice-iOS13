@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */; };
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
 		B799975D2B2BD32C0040B4CA /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799975C2B2BD32C0040B4CA /* QuizBrain.swift */; };
-		B799975F2B2BD68A0040B4CA /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B799975E2B2BD68A0040B4CA /* Styles.swift */; };
 		B79997622B2BDC950040B4CA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79997612B2BDC950040B4CA /* Button.swift */; };
 		B79997642B2BE22C0040B4CA /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79997632B2BE22C0040B4CA /* ProgressBar.swift */; };
 		B79997662B2BE3AC0040B4CA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79997652B2BE3AC0040B4CA /* Label.swift */; };
@@ -33,7 +32,6 @@
 		AD4BDE5722D878BC005BA4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B799975C2B2BD32C0040B4CA /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
-		B799975E2B2BD68A0040B4CA /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		B79997612B2BDC950040B4CA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		B79997632B2BE22C0040B4CA /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		B79997652B2BE3AC0040B4CA /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			children = (
 				B7AE8A5B2B293ACB00F3B615 /* Question.swift */,
 				B799975C2B2BD32C0040B4CA /* QuizBrain.swift */,
-				B799975E2B2BD68A0040B4CA /* Styles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,8 +143,9 @@
 		AD4BDE3E22D878BA005BA4CC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "The App Brewery";
 				TargetAttributes = {
 					AD4BDE4522D878BA005BA4CC = {
@@ -196,7 +194,6 @@
 				B799975D2B2BD32C0040B4CA /* QuizBrain.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
 				B7AE8A5C2B293ACB00F3B615 /* Question.swift in Sources */,
-				B799975F2B2BD68A0040B4CA /* Styles.swift in Sources */,
 				B79997662B2BE3AC0040B4CA /* Label.swift in Sources */,
 				AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */,
 				B79997642B2BE22C0040B4CA /* ProgressBar.swift in Sources */,
@@ -252,6 +249,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -312,6 +310,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

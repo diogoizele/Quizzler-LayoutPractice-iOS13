@@ -17,12 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Start the Game" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO" customClass="Label" customModule="Quizzler_iOS13" customModuleProvider="target">
-                                <rect key="frame" x="32" y="48" width="350" height="595"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Clique abaixo para iniciar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO" customClass="Label" customModule="Quizzler_iOS13" customModuleProvider="target">
+                                <rect key="frame" x="32" y="340" width="350" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="595" id="nd9-8m-BRs"/>
+                                    <constraint firstAttribute="width" constant="350" id="C0l-B3-mX3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-uw-MWR" customClass="Label" customModule="Quizzler_iOS13" customModuleProvider="target">
+                                <rect key="frame" x="32" y="300" width="350" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" systemColor="systemPurpleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,6 +42,23 @@
                                 <color key="progressTintColor" systemColor="systemPurpleColor"/>
                                 <color key="trackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFk-NY-H84" customClass="Button" customModule="Quizzler_iOS13" customModuleProvider="target">
+                                <rect key="frame" x="32" y="565" width="350" height="64"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="oZv-aF-dw1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="ukS-LV-F4j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ePT-YN-se5"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-Hl-IRe" customClass="Button" customModule="Quizzler_iOS13" customModuleProvider="target">
                                 <rect key="frame" x="32" y="653" width="350" height="64"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -45,7 +68,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="True">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -60,7 +83,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="False">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -77,7 +100,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Iniciar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -89,19 +112,26 @@
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
                             <constraint firstItem="tbn-vQ-GyC" firstAttribute="top" secondItem="oVw-Hl-IRe" secondAttribute="bottom" constant="24" id="0oF-RY-obp"/>
+                            <constraint firstItem="YEv-uw-MWR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="0tq-Fe-UWj"/>
+                            <constraint firstItem="rSI-li-mhO" firstAttribute="top" secondItem="YEv-uw-MWR" secondAttribute="bottom" constant="16" id="0wh-tg-taV"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="1rY-rb-4G8"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="tbn-vQ-GyC" secondAttribute="bottom" constant="28" id="7Sn-4l-7o1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YEv-uw-MWR" secondAttribute="trailing" constant="32" id="Byq-nn-6mX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSI-li-mhO" secondAttribute="trailing" constant="32" id="DME-X8-Xlf"/>
+                            <constraint firstItem="rSI-li-mhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Dvm-0t-2Fn"/>
+                            <constraint firstItem="oVw-Hl-IRe" firstAttribute="top" secondItem="XFk-NY-H84" secondAttribute="bottom" constant="24" id="Eeb-lC-dDx"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="bOP-UO-6Ej" secondAttribute="bottom" constant="28" id="I6s-rl-IYv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oVw-Hl-IRe" secondAttribute="trailing" constant="32" id="I7b-q7-OuB"/>
+                            <constraint firstItem="YEv-uw-MWR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="252" id="JFN-Mr-8c1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bOP-UO-6Ej" secondAttribute="trailing" constant="32" id="K4V-m2-Gid"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TXm-qh-7Xg" secondAttribute="trailing" constant="32" id="Og0-p8-6lw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSI-li-mhO" secondAttribute="trailing" constant="32" id="PvT-CB-qNA"/>
                             <constraint firstItem="bOP-UO-6Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Qj3-Cf-7tC"/>
-                            <constraint firstItem="rSI-li-mhO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vra-65-Vqr"/>
+                            <constraint firstItem="rSI-li-mhO" firstAttribute="top" secondItem="YEv-uw-MWR" secondAttribute="bottom" constant="16" id="UNp-aN-bzW"/>
                             <constraint firstItem="oVw-Hl-IRe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="bDg-pg-dZp"/>
                             <constraint firstItem="tbn-vQ-GyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="eM8-wy-spr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XFk-NY-H84" secondAttribute="trailing" constant="32" id="fgS-Iu-FWE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbn-vQ-GyC" secondAttribute="trailing" constant="32" id="pAn-I7-uZd"/>
-                            <constraint firstItem="rSI-li-mhO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="t7D-42-Alm"/>
+                            <constraint firstItem="XFk-NY-H84" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xPr-oc-pjV"/>
                             <constraint firstItem="bOP-UO-6Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xZh-Tv-daQ"/>
                             <constraint firstItem="bOP-UO-6Ej" firstAttribute="top" secondItem="oVw-Hl-IRe" secondAttribute="bottom" constant="24" id="y2E-J6-gP7"/>
                             <constraint firstItem="TXm-qh-7Xg" firstAttribute="top" secondItem="tbn-vQ-GyC" secondAttribute="bottom" constant="28" id="y38-ZZ-SG6"/>
@@ -110,12 +140,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answer1" destination="XFk-NY-H84" id="vPG-qB-yb3"/>
+                        <outlet property="answer2" destination="oVw-Hl-IRe" id="Kvu-e2-b2F"/>
+                        <outlet property="answer3" destination="tbn-vQ-GyC" id="kAf-WV-COQ"/>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="YJH-v3-Keh"/>
-                        <outlet property="buttonFalse" destination="tbn-vQ-GyC" id="kAf-WV-COQ"/>
                         <outlet property="buttonStart" destination="bOP-UO-6Ej" id="M3Z-aX-I5a"/>
-                        <outlet property="buttonTrue" destination="oVw-Hl-IRe" id="ZaD-LM-IuW"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="bB1-k4-ucM"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="hTP-0m-1e0"/>
+                        <outlet property="scoreLabel" destination="YEv-uw-MWR" id="HwJ-Zh-zqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
